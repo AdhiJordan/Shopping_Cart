@@ -55,7 +55,6 @@ const Card = ({
                 body: JSON.stringify(productWrap),
             })
             .then((response) => {
-                console.log('$$$$$', response);
                 if (response.status === 200) {
                     setToastMessage('Product Added to cart Successfully');
                     setToastType('success');
@@ -91,7 +90,6 @@ const Card = ({
                 body: JSON.stringify(productWrap),
             })
             .then((response) => {
-                console.log('$$$$$', response);
                 if (response.status === 200) {
                     setToastMessage('Product Added To Wishlist');
                     setToastType('success');

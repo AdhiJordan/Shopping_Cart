@@ -6,14 +6,7 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import SortBySelect from '../../Components/SortBySelect';
-//import filterOptions from './../Static/filtersOptions.json';
 import Loaders from '../../Components/Loaders';
-// import {
-//     getLaunchList,
-//     getLaunchByFiltersQuery,
-//     getQueryURL,
-//     resetAll,
-// } from './../store/actions/launch';
 import { connect, useDispatch } from 'react-redux';
 import Header from '../../Components/Header';
 import { useHistory, Link } from 'react-router-dom';
@@ -50,7 +43,6 @@ const CartPage = ({ userDetails, cartDetails }) => {
         axios
             .get(`https://fakestoreapi.com/products/` + productId)
             .then((response) => {
-                console.log('########', response);
                 if (response) {
                     console.log(response);
                     return response;
@@ -59,10 +51,6 @@ const CartPage = ({ userDetails, cartDetails }) => {
     };
 
     useEffect(() => {
-        //dispatch(getLaunchList());
-        //queryUrlParams(window.location.search);
-        console.log('cartDetails', cartDetails);
-
         if (cartDetails) {
             setCartProductDetails(cartDetails.cartList);
             let totalAmount = cartDetails.cartList.reduce(
@@ -70,7 +58,6 @@ const CartPage = ({ userDetails, cartDetails }) => {
                 0
             );
             setTotalPrice(totalAmount);
-            console.log('totalAmount', totalAmount);
         } else if (cartDetails.carList.length === 0) {
             setCartProductDetails([]);
             setEmptyLaunchList(true);
@@ -81,8 +68,6 @@ const CartPage = ({ userDetails, cartDetails }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    useEffect(() => {}, [cartDetails]);
 
     return (
         <div>

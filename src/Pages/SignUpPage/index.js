@@ -85,7 +85,6 @@ const SignUpPage = (props) => {
 
     const submitSignUp = (event) => {
         event.preventDefault();
-        console.log('signUpDetails', signUpDetails);
 
         if (Object.keys(validateSignupForm(signUpDetails)).length === 0) {
             let obj = {
@@ -102,7 +101,6 @@ const SignUpPage = (props) => {
                     body: JSON.stringify(obj),
                 })
                 .then((res) => {
-                    console.log('res', res);
                     if (res.status === 200) {
                         setToastMessage('User Successfully Added');
                         setToastType('success');
@@ -127,14 +125,6 @@ const SignUpPage = (props) => {
             email: '',
         }));
     };
-
-    // useEffect(() => {
-    //     if (token !== null && token) {
-    //         history.push('/overview/dashboard');
-    //     } else if (token === null) {
-    //         history.push('/');
-    //     }
-    // }, [token]);
 
     return (
         <div className="loginContentCls">

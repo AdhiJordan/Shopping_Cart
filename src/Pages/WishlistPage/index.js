@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import SortBySelect from '../../Components/SortBySelect';
 import Loaders from '../../Components/Loaders';
 import { connect, useDispatch } from 'react-redux';
 import Header from '../../Components/Header';
@@ -21,25 +20,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const WishlistPage = ({ userDetails, wishListDetails }) => {
     const history = useHistory();
-    const [getCartDetails, setCartDetails] = useState([]);
     const [getWishlistProductDetails, setWishlistProductDetails] = useState([]);
     const [launchCount, setLaunchCount] = useState(0);
     const [paginationIndex, setPaginationIndex] = useState(1);
     const [order, setOrder] = useState('DESC');
     const [emptyLaunchList, setEmptyLaunchList] = useState(false);
-
-    const dispatch = useDispatch();
-
-    const getProductDetails = (productId) => {
-        axios
-            .get(`https://fakestoreapi.com/products/` + productId)
-            .then((response) => {
-                if (response) {
-                    console.log(response);
-                    return response;
-                }
-            });
-    };
 
     useEffect(() => {
         if (wishListDetails) {

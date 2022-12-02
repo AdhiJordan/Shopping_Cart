@@ -29,8 +29,6 @@ const NavBar = ({ userDetails }) => {
         loginWithRedirect();
     };
 
-    console.log('userDetails', userDetails, isAuthenticated);
-
     return (
         <div>
             <Navbar expand="lg" variant="dark" bg="dark">

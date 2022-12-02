@@ -88,7 +88,6 @@ const LoginPage = () => {
 
     const submitLogin = (event) => {
         event.preventDefault();
-        console.log('loginDetails', loginDetails);
 
         if (Object.keys(validateLoginForm(loginDetails)).length === 0) {
             let obj = {
@@ -100,7 +99,6 @@ const LoginPage = () => {
                     body: JSON.stringify(obj),
                 })
                 .then((res) => {
-                    console.log('res', res);
                     if (res.status === 200) {
                         setToastMessage('Login Success');
                         setToastType('success');

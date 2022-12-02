@@ -46,3 +46,5 @@ export function configureStore() {
 }
 
 export default configureStore;
+
+//used for redux encryption security purpose.

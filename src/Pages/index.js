@@ -6,17 +6,6 @@ import useWindowsPathname from './../Components/WindowPathname';
 
 const HomePage = (props) => {
     const [getPathUrl] = useState(useWindowsPathname()); //useWindowsPathname()
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
-
-    const container =
-        window !== undefined ? () => window().document.body : undefined;
-
-    console.log('0000', getPathUrl.pathname.pathname);
 
     return (
         <div>

@@ -11,7 +11,6 @@ const isAuthenticated = (token) => {
 };
 
 const PrivateRoute = ({ path, userDetails, component: Component, ...rest }) => {
-    console.log('Step 1', userDetails);
     return (
         <Route
             {...rest}
