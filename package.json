@@ -2,7 +2,7 @@
     "name": "client",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://AdhiJordan.github.io/Shopping_Cart",
+    "homepage": "https://beautiful-fudge-aa7a1d.netlify.app/",
     "dependencies": {
         "@auth0/auth0-react": "^1.12.0",
         "@emotion/react": "^11.10.0",
